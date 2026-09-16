@@ -1,163 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Yasemin cumple años! 🎀</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de verdulería</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<div id="app"><div class="loading">Cargando…</div></div>
 
-  <!-- Pantalla de entrada -->
-  <div class="entrada" id="pantalla-entrada">
-    <img src="imagenes/fondo.jpg" alt="Fondo Hello Kitty" class="entrada-fondo-img">
-    <div class="entrada-brillos" id="entrada-brillos"></div>
-    <div class="entrada-contenido">
-      <h2 class="entrada-titulo">Yasemin te invita<br>a su cumple</h2>
-      <div class="entrada-sparkles">✨🎀✨</div>
-      <button class="entrada-boton" id="boton-entrar">
-        <span class="entrada-boton-texto">Abrir invitación</span>
-        <span class="entrada-boton-icono">💌</span>
-      </button>
-    </div>
-  </div>
+<div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <div class="confeti" id="confeti"></div>
-
-  <main class="tarjeta" id="tarjeta-principal">
-
-    <!-- Globos y moños flotantes -->
-    <div class="decoraciones-flotantes" aria-hidden="true">
-      <div class="decoracion globo float-1" style="color: #FFB6C6;">
-        <svg viewBox="0 0 50 90">
-          <path
-            d="M25,0 C10,0 0,10 0,25 C0,45 15,55 25,60 C35,55 50,45 50,25 C50,10 40,0 25,0 Z M20,60 L30,60 L27,65 L23,65 Z"
-            fill="currentColor" />
-          <path d="M25,65 Q30,75 20,85 Q10,95 25,100" fill="none" stroke="currentColor" stroke-width="1.5" />
-        </svg>
-      </div>
-      <div class="decoracion mono float-2" style="color: #BAE1FF;">
-        <svg viewBox="0 0 50 30">
-          <path d="M25,15 L5,0 C-5,5 -5,25 5,30 Z" fill="currentColor" />
-          <path d="M25,15 L45,0 C55,5 55,25 45,30 Z" fill="currentColor" />
-          <circle cx="25" cy="15" r="5" fill="currentColor" />
-        </svg>
-      </div>
-      <div class="decoracion globo float-3" style="color: #Baffc9;">
-        <svg viewBox="0 0 50 90">
-          <path
-            d="M25,0 C10,0 0,10 0,25 C0,45 15,55 25,60 C35,55 50,45 50,25 C50,10 40,0 25,0 Z M20,60 L30,60 L27,65 L23,65 Z"
-            fill="currentColor" />
-          <path d="M25,65 Q30,75 20,85 Q10,95 25,100" fill="none" stroke="currentColor" stroke-width="1.5" />
-        </svg>
-      </div>
-      <div class="decoracion mono float-4" style="color: #FFFFBA;">
-        <svg viewBox="0 0 50 30">
-          <path d="M25,15 L5,0 C-5,5 -5,25 5,30 Z" fill="currentColor" />
-          <path d="M25,15 L45,0 C55,5 55,25 45,30 Z" fill="currentColor" />
-          <circle cx="25" cy="15" r="5" fill="currentColor" />
-        </svg>
-      </div>
-      <div class="decoracion globo float-5" style="color: #E6B3FF;">
-        <svg viewBox="0 0 50 90">
-          <path
-            d="M25,0 C10,0 0,10 0,25 C0,45 15,55 25,60 C35,55 50,45 50,25 C50,10 40,0 25,0 Z M20,60 L30,60 L27,65 L23,65 Z"
-            fill="currentColor" />
-          <path d="M25,65 Q30,75 20,85 Q10,95 25,100" fill="none" stroke="currentColor" stroke-width="1.5" />
-        </svg>
-      </div>
-      <div class="decoracion mono float-6" style="color: #FFB6C6;">
-        <svg viewBox="0 0 50 30">
-          <path d="M25,15 L5,0 C-5,5 -5,25 5,30 Z" fill="currentColor" />
-          <path d="M25,15 L45,0 C55,5 55,25 45,30 Z" fill="currentColor" />
-          <circle cx="25" cy="15" r="5" fill="currentColor" />
-        </svg>
-      </div>
-    </div>
-
-    <!-- Cinta superior con lunares -->
-    <div class="cinta cinta-top" aria-hidden="true"></div>
-
-    <section class="hero">
-      <div class="portada-wrapper">
-        <img src="imagenes/portada.jpg" alt="Fiesta de Yasemin" class="portada-imagen">
-      </div>
-      <p class="eyebrow">MI FIESTA DE CUMPLEAÑOS</p>
-      <h1 class="titulo">✨ YASEMIN ✨</h1>
-      <p class="subtitulo">Vení a festejar conmigo una tarde llena de moños,<br>brillo y mucha diversión 🎀</p>
-
-      <!-- Separador -->
-      <div class="separador">
-        <span>🎀</span>
-        <span>✨</span>
-        <span>🎀</span>
-      </div>
-    </section>
-
-    <section class="datos">
-
-      <div class="dato">
-        <div class="icono" aria-hidden="true">📅</div>
-        <div class="dato-texto">
-          <span class="dato-label">Fecha</span>
-          <span class="dato-valor" id="dato-fecha">12 de Septiembre
-          </span>
-        </div>
-      </div>
-
-      <div class="dato">
-        <div class="icono" aria-hidden="true">🕐</div>
-        <div class="dato-texto">
-          <span class="dato-label">Hora</span>
-          <span class="dato-valor" id="dato-hora">16:30</span>
-        </div>
-      </div>
-
-      <div class="dato">
-        <div class="icono" aria-hidden="true">📍</div>
-        <div class="dato-texto">
-          <span class="dato-label">Lugar</span>
-          <span class="dato-valor" id="dato-lugar">
-            MI CASA<br>
-            <a href="https://maps.app.goo.gl/PbdsQ4EmNPRXy64g9" target="_blank" class="enlace-mapa">Ver en Google Maps
-              🗺️</a>
-          </span>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Galería con Hello Kittys -->
-    <section class="galeria-kitty">
-      <h2 class="galeria-titulo">🎀 Mis fotos favoritas 🎀</h2>
-      <div class="galeria-contenedor">
-        <img src="imagenes/cuerpo.jpg" alt="Hello Kitty galería" class="galeria-fondo">
-        <div class="galeria-grid">
-          <div class="galeria-foto foto-1"><img src="imagenes/foto1.jpg" alt="Foto 1"></div>
-          <div class="galeria-foto foto-2"></div>
-          <div class="galeria-foto foto-3"><img src="imagenes/foto2.jpg" alt="Foto 2"></div>
-          <div class="galeria-foto foto-4"></div>
-          <div class="galeria-foto foto-5"><img src="imagenes/foto3.jpg" alt="Foto 3"></div>
-          <div class="galeria-foto foto-6"></div>
-          <div class="galeria-foto foto-7"><img src="imagenes/foto4.jpg" alt="Foto 4"></div>
-          <div class="galeria-foto foto-8"><img src="imagenes/foto5.jpg" alt="Foto 5"></div>
-          <div class="galeria-foto foto-9"><img src="imagenes/foto6.jpg" alt="Foto 6"></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="cinta cinta-bottom" aria-hidden="true"></div>
-
-  </main>
-
-  <script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>
